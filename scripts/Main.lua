@@ -7,25 +7,31 @@ lmc_device_set_name("numpad", "884B96C3");
 
 -- Sent to AutoHotKey Function
 sendToAHK = function (key)
-    local file = io.open("F:\\Data\\Documents\\Programs\\luamacros\v2\\scripts\\keypressed.txt", "w")
+	-- Set File Directory
+	local file = io.open("F:\\Data\\Documents\\Programs\\luamacros\v2\\scripts\\keypressed.txt", "w")
 
-    file:write(key)
-    file:flush()
-    file:close()
+	-- Write to File
+	file:write(key)
+	file:flush()
+	file:close()
 
-    -- use the F24 key to trigger AutoHotkey
-    lmc_send_keys('{F24}')
+	-- Trigger AutoHotkey
+	lmc_send_keys('{F24}')
 end
 
 -- Event Handler
 lmc_set_handler("numpad", function(button, direction)
-    if (direction == 1) then return end
+	-- Ignore Double-Trigger
+	if (direction == 1) then return end
 
-    if type(Keys[button]) == "string" then
-        sendToAHK(Keys[button])
-    else
-        print('This key is not assigned; ' .. button)
-    end
+	-- Check if Key is Assigned
+	if type(Keys[button]) == "string" then
+		-- Launch AHK
+		sendToAHK(Keys[button])
+	else
+		-- oh. oh no.
+		print('This key is not assigned; ' .. button)
+	end
 end)
 
 -- Tell when Launched
