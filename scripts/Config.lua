@@ -50,9 +50,9 @@ exports.config = {
     [104] = "num8",
     [105] = "num9",
     [106] = "numMult",
-    [107] = "numDelete",
+    [107] = "numAdd",
     -- 108 is unknown...?
-    [109] = "numMult",
+    [109] = "numSub",
     [110] = "numDelete",
     [111] = "numDiv",
     [144] = "numLock",
