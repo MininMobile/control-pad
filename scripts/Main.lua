@@ -8,7 +8,7 @@ lmc_device_set_name("numpad", "884B96C3");
 -- Sent to AutoHotKey Function
 sendToAHK = function (key)
 	-- Set File Directory
-	local file = io.open("F:\\Data\\Documents\\Programs\\luamacros\v2\\scripts\\keypressed.txt", "w")
+	local file = io.open("F:\\Data\\Documents\\Programs\\luamacros\v2\\scripts\\key.temp", "w")
 
 	-- Write to File
 	file:write(key)
