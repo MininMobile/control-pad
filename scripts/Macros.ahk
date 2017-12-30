@@ -45,4 +45,4 @@ else if (k = "numAdd")
 else if (k = "backspace")
 	Send, {Media_Next}
 else if (k = "enter")
-	Sleep, 0.5
+	DllCall("PowrProf\SetSuspendState", "int", 0, "int", 0, "int", 0)
