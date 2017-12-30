@@ -11,21 +11,31 @@ FileRead, k, F:\Data\Documents\Programs\luamacros\v2\scripts\key.temp
 
 ; Detect the Key
 if (k = "num0") {
-	a = False
+	isDouble = False
 	if (A_TimeSincePriorHotkey>75 || A_PriorHotkey<>A_ThisHotkey)
-		a = False
+		isDouble = False
 	else
-		a = True
+		isDouble = True
 
-	if (%a% = True) {
-		Send, ^+#{PrintScreen}
+	if (%isDouble% = True) {
+		Run, www.github.com/new
 	} else {
-		; Open a Terminal and Run: git init
-		MsgBox, Title
+		Send, ^+#{PrintScreen}
 	}
 }
-else if (k = "numDelete")
-	Run, www.github.com/new
+else if (k = "numDelete") {
+	; Open a Terminal and Create Git Repository
+	Click, Right
+	Sleep, 50
+	Loop, 9 {
+		Send, {Up}
+	}
+	Send, {Enter}
+	Sleep, 1000
+	Send, git init{Enter}
+	Sleep, 100
+	Send, git remote add origin github.com/MininMobile/.git
+}
 else if (k = "num1")
 	Send, ^!{PrintScreen}
 else if (k = "num2") {
