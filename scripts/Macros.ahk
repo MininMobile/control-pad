@@ -19,7 +19,7 @@ F24:: ; ...yes.
 ; Read the Key
 FileRead, k, F:\Data\Documents\Programs\luamacros\v2\scripts\key.temp
 
-tippy(key)
+tippy(k)
 
 if (k = "num0")
 	Send, 0
