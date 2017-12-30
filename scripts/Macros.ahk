@@ -9,35 +9,40 @@ F24:: ; ...yes.
 ; Read the Key
 FileRead, k, F:\Data\Documents\Programs\luamacros\v2\scripts\key.temp
 
+; Detect the Key
 if (k = "num0")
-	Send, 0
+	Send, ^+#{PrintScreen}
+else if (k = "numDelete")
+	Run, www.github.com/new
 else if (k = "num1")
-	Send, 1
-else if (k = "num2")
-	Send, 2
+	Send, ^!{PrintScreen}
+else if (k = "num2") {
+	FileRead, lenny, F:\Data\Documents\Programs\luamacros\v2\scripts\lenny.txt
+	Send, %lenny%
+}
 else if (k = "num3")
-	Send, 3
+	SendInput, % Chr(0x1F914)
 else if (k = "num4")
-	Send, 4
+	Send, ^+{PrintScreen}
 else if (k = "num5")
-	Send, 5
+	Send, {Browser_Forward}
 else if (k = "num6")
-	Send, 6
+	Send, {Browser_Refresh}
 else if (k = "num7")
-	Send, 7
+	Send, ^+!{PrintScreen}
 else if (k = "num8")
-	Send, 8
+	Send, {Volume_Mute}
 else if (k = "num9")
-	Send, 9
+	Send, {Volume_Down}
 else if (k = "numDiv")
-	Send, woah
+	Send, {Media_Prev}
 else if (k = "numMult")
-	Send, dude
+	Send, {Media_Play_Pause}
 else if (k = "numSub")
-	Send, nice
+	Send, {Volume_Up}
 else if (k = "numAdd")
-	Send, bro
+	Send, {Browser_Back}
 else if (k = "backspace")
-	Send, oh
+	Send, {Media_Next}
 else if (k = "enter")
-	Send, no
+	Sleep, 0.5
