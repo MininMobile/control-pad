@@ -3,7 +3,7 @@ local Config = require "..\\v2\\scripts\\Config"
 local Keys = Config.config;
 
 -- Assign numpad to it's ID
-lmc_device_set_name("numpad", "884B96C3");
+lmc_assign_keyboard("numpad");
 
 -- Sent to AutoHotKey Function
 sendToAHK = function (key)
