@@ -37,13 +37,7 @@ else if (k = "numSub")
 	Send, nice
 else if (k = "numAdd")
 	Send, bro
-
-/*
-; Check for Buttons
-NumpadAdd::Send, Add
-NumpadSub::Send, Subtract
-NumpadDiv::Send, Divide
-NumpadMult::Send, Multiply
-; BackSpace::Send, Backspace
-; Enter::Send, Enter
-*/
+else if (k = "backspace")
+	Send, oh
+else if (k = "enter")
+	Send, no
