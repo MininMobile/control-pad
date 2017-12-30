@@ -29,8 +29,8 @@ lmc_set_handler("numpad", function(button, direction)
 		-- Launch AHK
 		sendToAHK(Keys[button])
 	else
-		-- oh. oh no.
-		print('This key is not assigned; ' .. button)
+	    -- oh. oh no.
+	    print('This key is not assigned; ' .. button)
 	end
 end)
 

@@ -10,8 +10,20 @@ F24:: ; ...yes.
 FileRead, k, F:\Data\Documents\Programs\luamacros\v2\scripts\key.temp
 
 ; Detect the Key
-if (k = "num0")
-	Send, ^+#{PrintScreen}
+if (k = "num0") {
+	a = False
+	if (A_TimeSincePriorHotkey>75 || A_PriorHotkey<>A_ThisHotkey)
+		a = False
+	else
+		a = True
+
+	if (%a% = True) {
+		Send, ^+#{PrintScreen}
+	} else {
+		; Open a Terminal and Run: git init
+		MsgBox, Title
+	}
+}
 else if (k = "numDelete")
 	Run, www.github.com/new
 else if (k = "num1")
