@@ -4,22 +4,10 @@ SendMode, Input
 SetWorkingDir, %A_ScriptDir%
 #SingleInstance, force
 
-tippy(tipsHere, wait := 333)
-{
-    ToolTip, %tipsHere%
-    SetTimer, noTip, %wait% ; in 1/3 seconds by default, remove the tooltip
-}
-noTip:
-    ; remove the tooltip
-    ToolTip,
-return
-
 F24:: ; ...yes.
 
 ; Read the Key
 FileRead, k, F:\Data\Documents\Programs\luamacros\v2\scripts\key.temp
-
-tippy(k)
 
 if (k = "num0")
 	Send, 0
