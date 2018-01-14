@@ -27,14 +27,14 @@ else if (k = "numDelete") {
 	; Open a Terminal and Create Git Repository
 	Click, Right
 	Sleep, 50
-	Loop, 9 {
+	Loop, 10 {
 		Send, {Up}
 	}
 	Send, {Enter}
 	Sleep, 1000
 	Send, git init{Enter}
 	Sleep, 100
-	Send, git remote add origin github.com/MininMobile/.git
+	Send, git remote add origin https://github.com/MininMobile/.git
 }
 else if (k = "num1")
 	Send, ^!{PrintScreen}
