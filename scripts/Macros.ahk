@@ -27,7 +27,7 @@ else if (k = "numDelete") {
 	; Open a Terminal and Create Git Repository
 	Click, Right
 	Sleep, 50
-	Loop, 10 {
+	Loop, 11 {
 		Send, {Up}
 	}
 	Send, {Enter}
